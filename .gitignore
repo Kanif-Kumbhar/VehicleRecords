@@ -1,0 +1,43 @@
+# Python bytecode
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environment
+venv/
+env/
+ENV/
+.venv/
+.ENV/
+
+# Jupyter Notebook checkpoints (if any)
+.ipynb_checkpoints/
+
+# macOS
+.DS_Store
+
+# VS Code settings
+.vscode/
+
+# PyCharm settings
+.idea/
+
+# Logs
+*.log
+
+# Streamlit specific
+.streamlit/config.toml
+
+# System files
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# PyInstaller
+*.spec
+dist/
+build/
+
+# Environment variable files
+.env
+.env.*
