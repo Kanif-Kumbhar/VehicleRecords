@@ -102,10 +102,12 @@ if submit:
             <h3 style="text-align:center">ANNEXURE-C</h3>
             <p style="text-align:center">DATA TO BE ENTERED BY EXAMINING OFFICER/P.O. WHEN<br>EXPORT GOODS ARE BROUGHT FOR EXAMINATION</p>
 
-            <div style="display:flex; justify-content:space-between;">
-                <div>1. Shipping Bill No.: <span class="bold" style="font-size:24px;">{shipping_bill_no}</span></div>
-                <div>Date: <span class="bold">{shipping_bill_date.strftime('%d-%m-%Y')}</span></div>
+            <div style="margin-top: 10px; display: flex; justify-content: space-between; align-items: center;">
+                <div style="flex: 1;">1. Shipping Bill No.:</div>
+                <div style="flex: 2; text-align: center; font-weight: bold; font-size: 24px;">{shipping_bill_no}</div>
+                <div style="flex: 1; text-align: right;">Date: <span class="bold">{shipping_bill_date.strftime('%d-%m-%Y')}</span></div>
             </div>
+
 
             <div>2. If Clubbing, No. and date of other S/Bs: __________________________</div>
             <div>3. Date of receipt of full consignment: __________________________</div>
@@ -115,7 +117,7 @@ if submit:
             <div>5. Freight and insurance charges</div>
             <div>&nbsp;&nbsp;&nbsp;&nbsp;(i) Freight Value: _____________ Currency: _____________</div>
             <div>&nbsp;&nbsp;&nbsp;&nbsp;(ii) Insurance Value: _____________ Currency: _____________</div>
-            <div>6. Total No of Packages: <span class="bold">{package_type}</span></div>
+            <div>6. Total No of Packages: <span class="bold">{total_no_packages}</span></div>
             <div>7. Types of pkgs (Boxes/Cartons/Bags etc.): <span class="bold">{package_type}</span></div>
             <div>8. Numbers marked on the pkgs (1-25 etc.): ____________________</div>
             <div>9. Gross weight (in Kgs): <span class="bold">{gross_weight:.2f} Kg</span></div>
