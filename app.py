@@ -5,8 +5,6 @@ import re
 st.set_page_config(page_title="Annexure-C Generator", layout="centered")
 st.title("🚛 Vehicle Load Entry & Annexure-C Receipt")
 
-COMPANY_NAME = "SHRIRAM ENTERPRISES(11/800)"
-
 st.subheader("📝 Vehicle Load Entry Form")
 
 # Persistent container count state
@@ -32,7 +30,9 @@ for i in range(st.session_state.num_containers):
 
 gross_weight = st.number_input("Gross Weight (in kg)", min_value=0.0, step=0.1)
 net_weight = st.number_input("Net Weight (in kg)", min_value=0.0, step=0.1)
+total_no_packages = st.number_input("Total Number of Packages", min_value=0, step=100, value=0)
 package_type = st.text_input("Package Type (e.g. Boxes, Cartons, Bags)")
+cha_name = st.text_input("Name of the Exporter/CHA", placeholder="Your Company Name")
 
 submit = st.button("Generate Annexure-C")
 
@@ -115,7 +115,7 @@ if submit:
             <div>5. Freight and insurance charges</div>
             <div>&nbsp;&nbsp;&nbsp;&nbsp;(i) Freight Value: _____________ Currency: _____________</div>
             <div>&nbsp;&nbsp;&nbsp;&nbsp;(ii) Insurance Value: _____________ Currency: _____________</div>
-            <div>6. Total No. of Packages: ____________________</div>
+            <div>6. Total No of Packages: <span class="bold">{package_type}</span></div>
             <div>7. Types of pkgs (Boxes/Cartons/Bags etc.): <span class="bold">{package_type}</span></div>
             <div>8. Numbers marked on the pkgs (1-25 etc.): ____________________</div>
             <div>9. Gross weight (in Kgs): <span class="bold">{gross_weight:.2f} Kg</span></div>
@@ -133,7 +133,7 @@ if submit:
             <div>&nbsp;&nbsp;&nbsp;&nbsp;(ii) Factory name and address: __________________________</div>
 
             <p>I/We declare that the particulars given above are true and correct.</p>
-            <div>Name of the Exporter/CHA: <span class="bold">{COMPANY_NAME}</span></div>
+            <div>Name of the Exporter/CHA: <span class="bold">{cha_name}</span></div>
             <div>ID No of authorised signatory of CHA: __________________________</div>
             <div>Date: __________________</div>
             <div>Goods arrived. Verified the number of packages and marks and numbers thereon and found to be as declared.</div>
